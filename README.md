@@ -16,7 +16,7 @@ This project is not affiliated with the UUP Dump website or Microsoft Corporatio
 ## Features
 - Supports downloading UUP files and system Appx application packages, and verifying their integrity.
 - Supports generating bootable ISO images and WIM files.
-- Supports direct installation of Windows. Can customize OOBE, user accounts, virtual memory, pre-assign volume labels, partition tables, ReFS volume boot, VHD boot, etc.
+- Supports direct installation of Windows. Can customize OOBE, user accounts, virtual memory, pre-assign volume letters, partition tables, ReFS volume boot, VHD boot, etc.
 - Supports in-place upgrade of Windows, with options to keep user data and applications, keep personal files only, or perform a clean install.
 - Supports switching between multiple architectures and Windows versions.
 - Supports installing updates.
