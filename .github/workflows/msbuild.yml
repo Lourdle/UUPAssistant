@@ -1,0 +1,51 @@
+name: MSBuild
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  SOLUTION_FILE_PATH: .
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration: [ Release, RelSRL ]
+        platform: [ x64, ARM64 ]
+        omp: [ on, off ]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Restore NuGet packages
+        run: nuget restore ${{ env.SOLUTION_FILE_PATH }}
+        
+      - name: Download Windows ADK Installer
+        run: Invoke-WebRequest -Uri "https://go.microsoft.com/fwlink/?linkid=2289980" -OutFile "./adksetup.exe" -UseBasicParsing
+
+      - name: Install Windows ADK Deployment Tools
+        run: Start-Process -FilePath ./adksetup -ArgumentList "/quiet /features OptionId.DeploymentTools" -Wait
+
+      - name: Apply OMP feature
+        run: cmd /c "echo OMP=${{ matrix.omp }}>configuration\features.enable"
+
+      - name: Build solution
+        run: msbuild /m /p:Configuration=${{ matrix.configuration }} /p:Platform=${{ matrix.platform }}
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: UUPAssistant_${{ matrix.configuration }}_omp=${{ matrix.omp }}_${{ matrix.platform }}
+          path: ${{ matrix.platform }}\${{ matrix.configuration }}

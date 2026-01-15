@@ -1,0 +1,2 @@
+#define FAKEWIMGAPI_API __declspec(dllexport)
+#define FAKEWIMGAPI_API __declspec(dllimport)

@@ -1,0 +1,12 @@
+{
+    "UseCRLF": true,
+    "Features": [
+        {
+            "Id": "OMP",
+            "Name": "OpenMP Parallel",
+            "Description": "Use OpenMP for parallel",
+            "Macro": "_USE_OMP",
+            "Default": false
+        }
+    ]
+}

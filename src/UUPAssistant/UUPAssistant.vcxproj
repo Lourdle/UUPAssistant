@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelSRL|ARM64">
+      <Configuration>RelSRL</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelSRL|x64">
+      <Configuration>RelSRL</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{1ab0ea4c-feed-426e-bf7a-495a00ef5709}</ProjectGuid>
+    <RootNamespace>UUPAssistant</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelSRL|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelSRL|ARM64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RelSRL|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RelSRL|ARM64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)deps\adk\SDKs\DismApi\Include;$(SolutionDir)deps\adk\SDKs\Wimgapi\Include;$(SolutionDir)deps\wimlib;$(SolutionDir)deps\UIFramework\Include;$(SolutionDir)configuration;$(IncludePath)</IncludePath>
+    <IntDir>$(SolutionDir)Obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)deps\adk\SDKs\DismApi\Include;$(SolutionDir)deps\adk\SDKs\Wimgapi\Include;$(SolutionDir)deps\wimlib;$(SolutionDir)deps\UIFramework\Include;$(SolutionDir)configuration;$(IncludePath)</IncludePath>
+    <IntDir>$(SolutionDir)Obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)deps\adk\SDKs\DismApi\Include;$(SolutionDir)deps\adk\SDKs\Wimgapi\Include;$(SolutionDir)deps\wimlib;$(SolutionDir)deps\UIFramework\Include;$(SolutionDir)configuration;$(IncludePath)</IncludePath>
+    <IntDir>$(SolutionDir)Obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelSRL|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)deps\adk\SDKs\DismApi\Include;$(SolutionDir)deps\adk\SDKs\Wimgapi\Include;$(SolutionDir)deps\wimlib;$(SolutionDir)deps\UIFramework\Include;$(SolutionDir)configuration;$(IncludePath)</IncludePath>
+    <IntDir>$(SolutionDir)Obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)deps\adk\SDKs\DismApi\Include;$(SolutionDir)deps\adk\SDKs\Wimgapi\Include;$(SolutionDir)deps\wimlib;$(SolutionDir)deps\UIFramework\Include;$(SolutionDir)configuration;$(IncludePath)</IncludePath>
+    <IntDir>$(SolutionDir)Obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelSRL|ARM64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)deps\adk\SDKs\DismApi\Include;$(SolutionDir)deps\adk\SDKs\Wimgapi\Include;$(SolutionDir)deps\wimlib;$(SolutionDir)deps\UIFramework\Include;$(SolutionDir)configuration;$(IncludePath)</IncludePath>
+    <IntDir>$(SolutionDir)Obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin\$(Platform)\$(Configuration)\;$(SolutionDir)deps\adk\SDKs\DismApi\Lib\$(TargetedSDKArchitecture);$(SolutionDir)deps\adk\SDKs\Wimgapi\Lib\$(TargetedSDKArchitecture);$(SolutionDir)deps\wimlib\$(TargetedSDKArchitecture);$(SolutionDir)deps\UIFramework\Lib\$(TargetedSDKArchitecture);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>common.lib;libwim.lib;dismapi.lib;wimgapi.lib;Lourdle.UIFramework.lib;Cabinet.lib;Shlwapi.lib;version.lib;gdiplus.lib;cabinet.lib;msdelta.lib;virtdisk.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <Version>10.0</Version>
+      <MinimumRequiredVersion>10.0</MinimumRequiredVersion>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)scripts\copy_deps.cmd $(OutDir) $(SolutionDir)deps\bin\$(TargetedSDKArchitecture)</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>$(SolutionDir)scripts\mkbinreslinks.cmd $(TargetedSDKArchitecture) $(Configuration) &amp;&amp; $(SolutionDir)scripts\configure.cmd</Command>
+    </PreBuildEvent>
+    <Manifest>
+      <EnableDpiAwareness>true</EnableDpiAwareness>
+      <AdditionalManifestFiles>compatibility.manifest</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin\$(Platform)\$(Configuration)\;$(SolutionDir)deps\adk\SDKs\DismApi\Lib\$(TargetedSDKArchitecture);$(SolutionDir)deps\adk\SDKs\Wimgapi\Lib\$(TargetedSDKArchitecture);$(SolutionDir)deps\wimlib\$(TargetedSDKArchitecture);$(SolutionDir)deps\UIFramework\Lib\$(TargetedSDKArchitecture);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>common.lib;libwim.lib;dismapi.lib;wimgapi.lib;Lourdle.UIFramework.lib;Cabinet.lib;Shlwapi.lib;version.lib;gdiplus.lib;cabinet.lib;msdelta.lib;virtdisk.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <MinimumRequiredVersion>10.0</MinimumRequiredVersion>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)scripts\copy_deps.cmd $(OutDir) $(SolutionDir)deps\bin\$(TargetedSDKArchitecture)</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>$(SolutionDir)scripts\mkbinreslinks.cmd $(TargetedSDKArchitecture) $(Configuration) &amp;&amp; $(SolutionDir)scripts\configure.cmd</Command>
+    </PreBuildEvent>
+    <Manifest>
+      <EnableDpiAwareness>true</EnableDpiAwareness>
+      <AdditionalManifestFiles>compatibility.manifest</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin\$(Platform)\$(Configuration)\;$(SolutionDir)bin\$(Platform);$(SolutionDir)deps\adk\SDKs\DismApi\Lib\$(TargetedSDKArchitecture);$(SolutionDir)deps\adk\SDKs\Wimgapi\Lib\$(TargetedSDKArchitecture);$(SolutionDir)deps\wimlib\$(TargetedSDKArchitecture);$(SolutionDir)deps\UIFramework\Lib\$(TargetedSDKArchitecture);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>common.lib;msvcrt.lib;msvcp_win.lib;msvcp60.lib;ucrtbase.lib;libwim.lib;dismapi.lib;wimgapi.lib;Lourdle.UIFramework.lib;Cabinet.lib;Shlwapi.lib;version.lib;gdiplus.lib;cabinet.lib;msdelta.lib;virtdisk.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <MinimumRequiredVersion>10.0</MinimumRequiredVersion>
+      <IgnoreSpecificDefaultLibraries>libucrt.lib;libvcruntime.lib</IgnoreSpecificDefaultLibraries>
+      <ForceFileOutput>MultiplyDefinedSymbolOnly</ForceFileOutput>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)scripts\copy_deps.cmd $(OutDir) $(SolutionDir)deps\bin\$(TargetedSDKArchitecture)</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>$(SolutionDir)scripts\mkbinreslinks.cmd $(TargetedSDKArchitecture) $(Configuration) &amp;&amp; $(SolutionDir)scripts\configure.cmd</Command>
+    </PreBuildEvent>
+    <Manifest>
+      <EnableDpiAwareness>true</EnableDpiAwareness>
+      <AdditionalManifestFiles>compatibility.manifest</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelSRL|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin\$(Platform)\$(Configuration)\;$(SolutionDir)deps\adk\SDKs\DismApi\Lib\$(TargetedSDKArchitecture);$(SolutionDir)deps\adk\SDKs\Wimgapi\Lib\$(TargetedSDKArchitecture);$(SolutionDir)deps\wimlib\$(TargetedSDKArchitecture);$(SolutionDir)deps\UIFramework\Lib\$(TargetedSDKArchitecture);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>common.lib;libwim.lib;dismapi.lib;wimgapi.lib;Lourdle.UIFramework.lib;Cabinet.lib;Shlwapi.lib;version.lib;gdiplus.lib;cabinet.lib;msdelta.lib;virtdisk.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <MinimumRequiredVersion>6.3</MinimumRequiredVersion>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)scripts\copy_deps.cmd $(OutDir) $(SolutionDir)deps\bin\$(TargetedSDKArchitecture)</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>$(SolutionDir)scripts\mkbinreslinks.cmd $(TargetedSDKArchitecture) $(Configuration) &amp;&amp; $(SolutionDir)scripts\configure.cmd</Command>
+    </PreBuildEvent>
+    <Manifest>
+      <EnableDpiAwareness>true</EnableDpiAwareness>
+      <AdditionalManifestFiles>compatibility.manifest</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin\$(Platform)\$(Configuration)\;$(SolutionDir)bin\$(Platform);$(SolutionDir)deps\adk\SDKs\DismApi\Lib\$(TargetedSDKArchitecture);$(SolutionDir)deps\adk\SDKs\Wimgapi\Lib\$(TargetedSDKArchitecture);$(SolutionDir)deps\wimlib\$(TargetedSDKArchitecture);$(SolutionDir)deps\UIFramework\Lib\$(TargetedSDKArchitecture);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>common.lib;msvcrt.lib;msvcp_win.lib;msvcp60.lib;ucrtbase.lib;libwim.lib;dismapi.lib;wimgapi.lib;Lourdle.UIFramework.lib;Cabinet.lib;Shlwapi.lib;version.lib;gdiplus.lib;cabinet.lib;msdelta.lib;virtdisk.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <MinimumRequiredVersion>10.0</MinimumRequiredVersion>
+      <IgnoreSpecificDefaultLibraries>libucrt.lib;libvcruntime.lib</IgnoreSpecificDefaultLibraries>
+      <ForceFileOutput>MultiplyDefinedSymbolOnly</ForceFileOutput>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)scripts\copy_deps.cmd $(OutDir) $(SolutionDir)deps\bin\$(TargetedSDKArchitecture)</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>$(SolutionDir)scripts\mkbinreslinks.cmd $(TargetedSDKArchitecture) $(Configuration) &amp;&amp; $(SolutionDir)scripts\configure.cmd</Command>
+    </PreBuildEvent>
+    <Manifest>
+      <EnableDpiAwareness>true</EnableDpiAwareness>
+      <AdditionalManifestFiles>compatibility.manifest</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelSRL|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin\$(Platform)\$(Configuration)\;$(SolutionDir)deps\adk\SDKs\DismApi\Lib\$(TargetedSDKArchitecture);$(SolutionDir)deps\adk\SDKs\Wimgapi\Lib\$(TargetedSDKArchitecture);$(SolutionDir)deps\wimlib\$(TargetedSDKArchitecture);$(SolutionDir)deps\UIFramework\Lib\$(TargetedSDKArchitecture);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>common.lib;libwim.lib;dismapi.lib;wimgapi.lib;Lourdle.UIFramework.lib;Cabinet.lib;Shlwapi.lib;version.lib;gdiplus.lib;cabinet.lib;msdelta.lib;virtdisk.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <MinimumRequiredVersion>6.3</MinimumRequiredVersion>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)scripts\copy_deps.cmd $(OutDir) $(SolutionDir)deps\bin\$(TargetedSDKArchitecture)</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>$(SolutionDir)scripts\mkbinreslinks.cmd $(TargetedSDKArchitecture) $(Configuration) &amp;&amp; $(SolutionDir)scripts\configure.cmd</Command>
+    </PreBuildEvent>
+    <Manifest>
+      <EnableDpiAwareness>true</EnableDpiAwareness>
+      <AdditionalManifestFiles>compatibility.manifest</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="BCD.h" />
+    <ClInclude Include="DiskPartTable.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Resources\resource.h" />
+    <ClInclude Include="misc.h" />
+    <ClInclude Include="UUPAssistant.h" />
+    <ClInclude Include="Xml.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\CheckMiniNt.ixx">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelSRL|ARM64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelSRL|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="AppDlg.cpp" />
+    <ClCompile Include="AppPreparation.cpp" />
+    <ClCompile Include="BCD.cpp" />
+    <ClCompile Include="Bootstrap.cpp" />
+    <ClCompile Include="Cabinet.cpp" />
+    <ClCompile Include="DiskPart.cpp" />
+    <ClCompile Include="DriverDlg.cpp" />
+    <ClCompile Include="DriverUtils.cpp" />
+    <ClCompile Include="EdgeInstallation.cpp" />
+    <ClCompile Include="Installation.cpp" />
+    <ClCompile Include="InstallThread.cpp" />
+    <ClCompile Include="InstallationProgress.cpp" />
+    <ClCompile Include="InstallationWizard.cpp" />
+    <ClCompile Include="CreateImage.cpp" />
+    <ClCompile Include="CreateImageWizard.cpp" />
+    <ClCompile Include="CreateISO.cpp" />
+    <ClCompile Include="DirDelete.cpp" />
+    <ClCompile Include="Constants.ixx" />
+    <ClCompile Include="OOBE.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelSRL|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelSRL|ARM64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="PrintXml.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelSRL|ARM64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelSRL|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ProgressRing.cpp" />
+    <ClCompile Include="PSF.cpp" />
+    <ClCompile Include="DiskPartUtils.cpp" />
+    <ClCompile Include="UpdateDlg.cpp" />
+    <ClCompile Include="InplaceSetupWizard.cpp" />
+    <ClCompile Include="InplaceSetup.cpp" />
+    <ClCompile Include="misc.cpp" />
+    <ClCompile Include="Preprocess.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources\UUPAssistant.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\bin\ARM64\Release\DllFdHook.dll" />
+    <None Include="..\..\bin\ARM64\Release\FakeAutoRun.dll" />
+    <None Include="..\..\bin\FakeSetupHost.exe" />
+    <None Include="..\..\bin\FakeWimgAPI.dll" />
+    <None Include="..\..\bin\Oscdimg.cab" />
+    <None Include="..\..\bin\x64\Release\DllFdHook.dll" />
+    <None Include="..\..\bin\x64\Release\FakeAutoRun.dll" />
+    <None Include="..\bin\ARM64\Release\DllFdHook.dll" />
+    <None Include="..\bin\ARM64\Release\FakeAutoRun.dll" />
+    <None Include="..\bin\FakeSetupHost.exe" />
+    <None Include="..\bin\FakeWimgAPI.dll" />
+    <None Include="..\bin\Oscdimg.cab" />
+    <None Include="..\bin\x64\Release\DllFdHook.dll" />
+    <None Include="..\bin\x64\Release\FakeAutoRun.dll" />
+    <None Include="packages.config" />
+    <None Include="Resources\BootRecords\exfatbootmgrldr.pbr" />
+    <None Include="Resources\BootRecords\fatbootmgrldr.com" />
+    <None Include="Resources\BootRecords\fat32bootmgrldr.com" />
+    <None Include="Resources\BootRecords\mbrbootloader.com" />
+    <None Include="Resources\BootRecords\ntfsbootmgrldr.pbr" />
+    <None Include="Resources\EmptyESD.esd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="compatibility.manifest" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\packages\rapidxml.1.13\build\native\rapidxml.targets" Condition="Exists('..\..\packages\rapidxml.1.13\build\native\rapidxml.targets')" />
+    <Import Project="..\..\packages\Microsoft.Windows.ImplementationLibrary.1.0.250325.1\build\native\Microsoft.Windows.ImplementationLibrary.targets" Condition="Exists('..\..\packages\Microsoft.Windows.ImplementationLibrary.1.0.250325.1\build\native\Microsoft.Windows.ImplementationLibrary.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\rapidxml.1.13\build\native\rapidxml.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\rapidxml.1.13\build\native\rapidxml.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Windows.ImplementationLibrary.1.0.250325.1\build\native\Microsoft.Windows.ImplementationLibrary.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Windows.ImplementationLibrary.1.0.250325.1\build\native\Microsoft.Windows.ImplementationLibrary.targets'))" />
+  </Target>
+</Project>

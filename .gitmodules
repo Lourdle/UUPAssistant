@@ -1,0 +1,6 @@
+[submodule "deps/Detours"]
+	path = deps/Detours
+	url = https://github.com/microsoft/Detours.git
+[submodule "deps/zip"]
+	path = deps/zip
+	url = https://github.com/kuba--/zip.git

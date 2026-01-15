@@ -1,0 +1,6 @@
+EXPORTS
+	DetourTransactionBegin=DetourTransactionBegin
+	DetourTransactionCommit=DetourTransactionCommit
+	DetourUpdateThread=DetourUpdateThread
+	DetourAttach=DetourAttach
+	DetourDetach=DetourDetach
