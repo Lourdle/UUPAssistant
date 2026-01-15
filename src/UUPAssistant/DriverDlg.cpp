@@ -522,7 +522,7 @@ public:
 	const int nPixelPerItem;
 
 	SystemList(Dialog* Parent, int X, int Y, int cx, int cy) : Window(X, Y, cx, cy, nullptr, WS_CHILD | WS_BORDER | WS_VSCROLL, *Parent),
-		nPixelPerItem(MulDiv(90, GetDpiForWindow(hWnd), BaseDpi) + GetFontSize() * 4)
+		nPixelPerItem(MulDiv(90, _GetDpiForWindow(hWnd), BaseDpi) + GetFontSize() * 4)
 	{
 		bDoubleBuffer = true;
 	}
@@ -622,7 +622,7 @@ public:
 		bool bDarkMode = IsDarkModeEnabled();
 		Pen p(bDarkMode ? Color(255, 255, 255) : Color(0, 0, 0), 1.0F);
 
-		const auto Dpi = GetDpiForWindow(hWnd);
+		const auto Dpi = _GetDpiForWindow(hWnd);
 		const auto Width = MulDiv(229, Dpi, BaseDpi);
 		const auto Height = MulDiv(36, Dpi, BaseDpi);
 		const auto LogoFullHeight = MulDiv(44, Dpi, BaseDpi);

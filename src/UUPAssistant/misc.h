@@ -124,4 +124,11 @@ public:
 	}
 };
 
+
+#if !defined( _RELSRL) && !defined(_DEBUG)
+#define _GetDpiForWindow GetDpiForWindow
+#else
+extern decltype(::GetDpiForWindow)* _GetDpiForWindow;
+#endif
+
 #endif // MISC_H

@@ -73,6 +73,42 @@ void UnloadMountedImageRegistries(PCWSTR pszMountDir)
 		CloseHandle(hDir);
 }
 
+#ifndef _GetDpiForWindow
+decltype(::GetDpiForWindow)* _GetDpiForWindow;
+static UINT WINAPI MyGetDpiForWindow(HWND hwnd)
+{
+	UINT dpi = 96;
+
+	auto CreateMonitorDCFromWindow = [](HWND hwnd) -> HDC
+		{
+			HMONITOR hMon = MonitorFromWindow(hwnd, MONITOR_DEFAULTTONEAREST);
+			if (!hMon) return nullptr;
+
+			MONITORINFOEXW mi;
+			mi.cbSize = sizeof(mi);
+			if (!GetMonitorInfoW(hMon, reinterpret_cast<MONITORINFO*>(&mi)))
+				return nullptr;
+
+			return CreateDCW(mi.szDevice, nullptr, nullptr, nullptr);
+		};
+
+	if (HDC hdcMon = CreateMonitorDCFromWindow(hwnd)) {
+		int v = GetDeviceCaps(hdcMon, LOGPIXELSX);
+		DeleteDC(hdcMon);
+		if (v > 0) return v;
+	}
+
+	if (HDC hdc = GetDC(nullptr)) {
+		int v = GetDeviceCaps(hdc, LOGPIXELSX);
+		ReleaseDC(nullptr, hdc);
+		if (v > 0) return static_cast<UINT>(v);
+	}
+
+	return dpi;
+}
+#endif
+
+
 int
 WINAPI
 wWinMain(
@@ -333,6 +369,15 @@ wWinMain(
 		PostMessageW(hWnd, UupAssistantMsg::DriverDlg_SystemScanCompleted, 0, 0);
 		return 0;
 	}
+
+#ifndef _GetDpiForWindow
+	{
+		HMODULE hUser32 = GetModuleHandleW(L"user32.dll");
+		_GetDpiForWindow = reinterpret_cast<decltype(::GetDpiForWindow)*>(GetProcAddress(hUser32, "GetDpiForWindow"));
+		if (!_GetDpiForWindow)
+			_GetDpiForWindow = MyGetDpiForWindow;
+	}
+#endif
 
 	UIFrameworkInit();
 	wimlib_global_init(0);
